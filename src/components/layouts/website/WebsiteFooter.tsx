@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 const footerLinks = {
   Platform: [
     { label: 'Competitions', href: '/competitions' },
@@ -76,7 +78,7 @@ export default function WebsiteFooter() {
 
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} CompeteHub. All rights reserved.
+            © {CURRENT_YEAR} CompeteHub. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-slate-500 text-sm">
             <span>Made with</span>

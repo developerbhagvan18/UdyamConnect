@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const stats = [
   { label: 'Total Competitions', value: '24', change: '+3', changeType: 'up', icon: '🏆', color: 'indigo' },
@@ -44,7 +45,11 @@ const colorMap: Record<string, string> = {
 };
 
 export default function AdminDashboard() {
-  const today = new Date().toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  const [today, setToday] = useState('');
+
+  useEffect(() => {
+    setToday(new Date().toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }));
+  }, []);
 
   return (
     <div className="space-y-6">
